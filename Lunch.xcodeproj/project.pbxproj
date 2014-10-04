@@ -14,6 +14,8 @@
 		D2037C7A19DFEE12000C960E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2037C7919DFEE12000C960E /* Images.xcassets */; };
 		D2037C7D19DFEE12000C960E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2037C7B19DFEE12000C960E /* LaunchScreen.xib */; };
 		D2037C8919DFEE12000C960E /* LunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2037C8819DFEE12000C960E /* LunchTests.m */; };
+		FA90234019DFF79C001548A2 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = FA90233F19DFF79C001548A2 /* Search.m */; };
+		FA994B2D19DFF3C100411A1D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FA994B2C19DFF3C100411A1D /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		D2037C8219DFEE12000C960E /* LunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2037C8719DFEE12000C960E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2037C8819DFEE12000C960E /* LunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LunchTests.m; sourceTree = "<group>"; };
+		FA90233E19DFF79C001548A2 /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		FA90233F19DFF79C001548A2 /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		FA994B2B19DFF3C100411A1D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FA994B2C19DFF3C100411A1D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,10 @@
 		D2037C6B19DFEE12000C960E /* Lunch */ = {
 			isa = PBXGroup;
 			children = (
+				FA994B2B19DFF3C100411A1D /* User.h */,
+				FA994B2C19DFF3C100411A1D /* User.m */,
+				FA90233E19DFF79C001548A2 /* Search.h */,
+				FA90233F19DFF79C001548A2 /* Search.m */,
 				D2037C7019DFEE12000C960E /* AppDelegate.h */,
 				D2037C7119DFEE12000C960E /* AppDelegate.m */,
 				D2037C7319DFEE12000C960E /* ViewController.h */,
@@ -219,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA994B2D19DFF3C100411A1D /* User.m in Sources */,
 				D2037C7519DFEE12000C960E /* ViewController.m in Sources */,
+				FA90234019DFF79C001548A2 /* Search.m in Sources */,
 				D2037C7219DFEE12000C960E /* AppDelegate.m in Sources */,
 				D2037C6F19DFEE12000C960E /* main.m in Sources */,
 			);
@@ -412,6 +424,7 @@
 				D2037C8E19DFEE12000C960E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2037C8F19DFEE12000C960E /* Build configuration list for PBXNativeTarget "LunchTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				D2037C9119DFEE12000C960E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
