@@ -34,6 +34,8 @@
  *  @param friend User object
  */
 - (void)addFriend:(NSString *)friend {
+    // Find the Parse User associated with this username.
+    // Pass this argument into the friends array.
     [self.friends addObject:friend];
 }
 
@@ -43,6 +45,8 @@
  *  @param friend User object
  */
 - (void)removeFriend:(NSString *)friend {
+    // Find the Parse User associated with this username.
+    // Pass this argument into the friends array.
     [self.friends removeObject:friend];
 }
 

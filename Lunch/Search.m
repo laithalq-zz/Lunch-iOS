@@ -14,26 +14,37 @@
  *  Broadcasts to other Users to look for a match
  */
 - (void)broadcast {
-    int timer = 300;
-    while (!self.otherUser || timer == 0) {
-        User *user = [self findUser];
-        self.otherUser = user;
-        [NSThread sleepForTimeInterval:1.0f];
+    int timer = 100;
+    self.mainUser.status = YES;
+    while (timer > 0) {
+        for (User *friend in [self.mainUser.friends]) {
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+            if (friend.username) {
+                [query whereKey:@"username" equalTo:friend.username];
+            }
+            
+            [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+                if (object[@"status"] == @"YES") {
+                    NSLog(@"Successfully retrieved the object.");
+                    [self.delegate matchFound:object.objectId];
+                    self.mainUser.status = NO;
+                    return;
+                }
+            }];
+        }
         timer -= 1;
     }
-    if (self.otherUser) {
-        [self makeConnection];
-    } else {
-        // Notify that the broadcast failed
-    }
+    self.mainUser.status = NO;
+    [self.delegate userSearchFailed];
+    return;
 }
 
 /**
  *  Finds a restaurant for two Users to meet
  *
- *  @return True if a restaurant is found
  */
-- (BOOL)findRestaurant {
+- (void)findRestaurant {
     NSDictionary *filter = [[NSDictionary alloc] init];
     NSDictionary *mainPreferences = self.mainUser.preferences;
     NSDictionary *otherPreferences = self.otherUser.preferences;
@@ -45,24 +56,8 @@
         }
     }
     
+    // Perform a Yelp Query here.
     return true;
-}
-
-/**
- *  Create the connection between the Search's two Users.
- */
-- (void)makeConnection {
-    // Connect
-    [self findRestaurant];
-}
-
-/**
- *  Finds a user from the broadcasts
- *
- *  @return The matched user.
- */
-- (User *)findUser {
-    return nil;
 }
 
 @end

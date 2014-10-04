@@ -10,6 +10,7 @@
 
 @interface User : NSObject
 
+@property (nonatomic) BOOL status;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSMutableArray *friends;
 @property (nonatomic, strong) NSMutableDictionary *preferences;

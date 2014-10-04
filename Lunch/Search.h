@@ -9,12 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+@protocol ParseDelegate <NSObject>
+
+- (void)matchFound:(NSString *)objectId;
+
+- (void)userSearchFailed;
+
+@end
+
 @interface Search : NSObject
+
+@property (weak) id <ParseDelegate> delegate;
 
 @property (nonatomic, strong) User *mainUser;
 @property (nonatomic, strong) User *otherUser;
 
 - (void)broadcast;
-- (BOOL)findRestaurant;
+- (void)findRestaurant;
 
 @end
